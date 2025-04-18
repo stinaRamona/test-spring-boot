@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TestSpringBootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestSpringBootApplication.class, args);
+		//SpringApplication.run(TestSpringBootApplication.class, args);
+
+		var orderService = new OrderService(new BPaymentService()); //kan vara annan ifall men behöver byta
+		orderService.placeOrder(); //kallar på funktion från APaymentService
 	}
 
 }
